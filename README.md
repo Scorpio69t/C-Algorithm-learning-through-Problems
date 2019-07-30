@@ -1,4 +1,4 @@
-# C-Algorithm-learning-through-Problems
+# Algorithm-learning-through-Problems
 ## 趣题学算法
 作者: 徐子珊 
 出版社: 人民邮电出版社
