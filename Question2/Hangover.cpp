@@ -5,8 +5,14 @@
 using namespace std;
 
 int getHangOver(float N) {
-	int count = 0;
-	
+	int count = 1;
+	float length = 0.00;
+
+	while (length < N) {
+		length = length + (float)(1 / (count + 1));
+		count++;
+	}
+	if (length > N)	count--;
 
 	return count;
 }
@@ -17,8 +23,13 @@ int main(){
     int result = 0;
 	float N;
     inputdata>>N;
-    while(N > 0.00){
-       
+    printf("%.2f", N);
+    while(N > 0){
+		result = getHangOver(N);
+		printf("%.2f", result);
+		cout << result << endl;
+		outputdata << result << "card(s)" << endl;
+		inputdata >> N;
     }
     inputdata.close();
     outputdata.close();
