@@ -4,31 +4,30 @@
 
 using namespace std;
 
-int getHangOver(float N) {
-	int count = 1;
-	float length = 0.00;
+int getHangOver(double N) {
+	int n = 1;
+	double length = 0.00;
 
 	while (length < N) {
-		length = length + (float)(1 / (count + 1));
-		count++;
+		length += (double)((double)1 / (double)(n + 1));
+		n++;
 	}
-	if (length > N)	count--;
+	if (length > N)	n--;
 
-	return count;
+	return n;
 }
 
 int main(){
     ifstream inputdata("inputdata.txt", ios::in); //输入文件流对象
     ofstream outputdata("outputdata.txt", ios::out); //输出文件流对象
     int result = 0;
-	float N;
+	double N;
     inputdata>>N;
-    printf("%.2f", N);
-    while(N > 0){
+    printf("N: %f\n", N);
+    while(N != 0.00){
 		result = getHangOver(N);
-		printf("%.2f", result);
-		cout << result << endl;
-		outputdata << result << "card(s)" << endl;
+		printf("R: %d\n", result);
+		outputdata << result << " card(s)" << endl;
 		inputdata >> N;
     }
     inputdata.close();
