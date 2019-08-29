@@ -21,8 +21,13 @@ int main(){
     ifstream inputdata("inputdata.txt", ios::in); //输入文件流对象
     ofstream outputdata("outputdata.txt", ios::out); //输出文件流对象
 	int count = 0;
+	int N, M;
 	inputdata >> count;
-	printf("%d", count);
+	cout << count << endl;
+    inputdata >> N;
+    cout << N << endl;
+    inputdata >> M;
+    cout << M;
     inputdata.close();
     //outputdata.close();
 
