@@ -20,18 +20,11 @@ int getHangOver(double N) {
 int main(){
     ifstream inputdata("inputdata.txt", ios::in); //输入文件流对象
     ofstream outputdata("outputdata.txt", ios::out); //输出文件流对象
-    int result = 0;
-	double N;
-    inputdata>>N;
-    printf("N: %f\n", N);
-    while(N != 0.00){
-		result = getHangOver(N);
-		printf("R: %d\n", result);
-		outputdata << result << " card(s)" << endl;
-		inputdata >> N;
-    }
+	int count = 0;
+	inputdata >> count;
+	printf("%d", count);
     inputdata.close();
-    outputdata.close();
+    //outputdata.close();
 
     return 0;
 }
